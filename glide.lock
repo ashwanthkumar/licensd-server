@@ -1,6 +1,10 @@
-hash: bcc6b50a1ca7f12b78c1e5a2fced4aa5f80a28fb51f111d24225d120ee94671c
-updated: 2017-09-14T18:23:06.971612555+05:30
+hash: 2c0a62f5e939d95f6c99ae231d40252116330faa3d9ce811311bf2d2e64079df
+updated: 2017-09-14T19:35:11.576501494+05:30
 imports:
+- name: github.com/elgris/sqrl
+  version: a001f88a79e6210d38c802166e7797479d054b68
+- name: github.com/fsnotify/fsnotify
+  version: 4da3e2cfbabc9f751898f250b49f2439785783a1
 - name: github.com/gin-contrib/sse
   version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
 - name: github.com/gin-gonic/gin
@@ -9,6 +13,8 @@ imports:
   - binding
   - json
   - render
+- name: github.com/go-sql-driver/mysql
+  version: 14f4292c08c0daf077adddd5824cffc82a797ff4
 - name: github.com/golang/protobuf
   version: 17ce1425424ab154092bbb43af630bd647f3bb0d
   subpackages:
@@ -17,10 +23,39 @@ imports:
   version: 12126fbfe000a09047ebdeb2b5160be3af88ab9e
   subpackages:
   - github
+- name: github.com/hashicorp/hcl
+  version: 8f6b1344a92ff8877cf24a5de9177bf7d0a2a187
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/scanner
+  - hcl/strconv
+  - hcl/token
+  - json/parser
+  - json/scanner
+  - json/token
 - name: github.com/json-iterator/go
   version: 6a4ba7bfa9e8d65cfd026267a44165b688352ad7
+- name: github.com/magiconair/properties
+  version: 8d7837e64d3c1ee4e54a880c5a920ab4316fc90a
 - name: github.com/mattn/go-isatty
   version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/pelletier/go-toml
+  version: 1d6b12b7cb290426e27e6b4e38b89fcda3aeef03
+- name: github.com/spf13/afero
+  version: ee1bd8ee15a1306d1f9201acc41ef39cd9f99a1b
+  subpackages:
+  - mem
+- name: github.com/spf13/cast
+  version: acbeb36b902d72a7a4c18e8f3241075e7ab763e4
+- name: github.com/spf13/jwalterweatherman
+  version: 12bd96e66386c1960ab0f74ced1362f66f552f7b
+- name: github.com/spf13/pflag
+  version: 7aff26db30c1be810f9de5038ec5ef96ac41fd7c
+- name: github.com/spf13/viper
+  version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
 - name: github.com/ugorji/go
   version: 8c0409fcbb70099c748d71f714529204975f6c3f
   subpackages:
@@ -29,6 +64,11 @@ imports:
   version: 062cd7e4e68206d8bab9b18396626e855c992658
   subpackages:
   - unix
+- name: golang.org/x/text
+  version: ab5ac5f9a8deb4855a60fab02bc61a4ec770bd49
+  subpackages:
+  - transform
+  - unicode/norm
 - name: gopkg.in/go-playground/validator.v8
   version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
 - name: gopkg.in/yaml.v2

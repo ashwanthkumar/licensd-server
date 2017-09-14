@@ -1,1 +1,4 @@
 vendor/
+licensd
+licensd-*
+config.yml

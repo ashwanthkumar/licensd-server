@@ -4,3 +4,6 @@ import:
   subpackages:
   - github
 - package: github.com/gin-gonic/gin
+- package: github.com/elgris/sqrl
+- package: github.com/go-sql-driver/mysql
+- package: github.com/spf13/viper
