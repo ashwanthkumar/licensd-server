@@ -1,0 +1,10 @@
+hash: bcc6b50a1ca7f12b78c1e5a2fced4aa5f80a28fb51f111d24225d120ee94671c
+updated: 2017-09-14T17:09:35.180709819+05:30
+imports:
+- name: github.com/gin-gonic/gin
+  version: 5afc5b19730118c9b8324fe9dd995d44ec65c81a
+- name: github.com/google/go-github
+  version: 12126fbfe000a09047ebdeb2b5160be3af88ab9e
+  subpackages:
+  - github
+testImports: []

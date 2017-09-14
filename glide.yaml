@@ -1,0 +1,6 @@
+package: github.com/ashwanthkumar/licensd.in
+import:
+- package: github.com/google/go-github
+  subpackages:
+  - github
+- package: github.com/gin-gonic/gin
