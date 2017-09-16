@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/ashwanthkumar/licensd-server/handler"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -13,6 +14,7 @@ func main() {
 	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
 	}
+	initDatabase()
 
 	r := gin.Default()
 	r.GET("/health", func(c *gin.Context) {
@@ -20,5 +22,6 @@ func main() {
 			"status": "OK",
 		})
 	})
+	r.POST("/payload", handler.AddPayloadToDB)
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

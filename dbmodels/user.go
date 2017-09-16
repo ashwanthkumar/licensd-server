@@ -1,4 +1,4 @@
-package models
+package dbmodels
 
 // User represents the Users who signup / login into the system
 type User struct {

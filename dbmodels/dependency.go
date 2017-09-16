@@ -1,4 +1,4 @@
-package models
+package dbmodels
 
 // Dependency represents each dependency that the project has for a particular build
 type Dependency struct {
