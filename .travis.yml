@@ -1,0 +1,10 @@
+language: go
+
+# Install glide
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:masterminds/glide'
+    packages:
+    - glide
+
