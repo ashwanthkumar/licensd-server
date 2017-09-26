@@ -1,4 +1,4 @@
-package: github.com/ashwanthkumar/licensd.in
+package: github.com/ashwanthkumar/licensd-server
 import:
 - package: github.com/google/go-github
   subpackages:

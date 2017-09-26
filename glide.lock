@@ -1,5 +1,5 @@
-hash: 8396cc5364bad83fb94053110fe8bd44a6d96e67cd0385dd41352f37c78ae324
-updated: 2017-09-26T22:26:34.002880899+05:30
+hash: dfd5b32ace9fedcd1140b0c55250fb22130d59f5ccce6ab3d24027e30071cf97
+updated: 2017-09-26T23:23:02.506564124+05:30
 imports:
 - name: github.com/elgris/sqrl
   version: a001f88a79e6210d38c802166e7797479d054b68
@@ -77,4 +77,12 @@ imports:
   version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
 - name: gopkg.in/yaml.v2
   version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
-testImports: []
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
