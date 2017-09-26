@@ -28,6 +28,7 @@ test-only:
 	go test ${TESTFLAGS} github.com/ashwanthkumar/licensd-server/${name}
 
 test:
+	go test ${TESTFLAGS} -coverprofile=parser.txt github.com/ashwanthkumar/licensd-server/parser
 	go test ${TESTFLAGS} -coverprofile=main.txt github.com/ashwanthkumar/licensd-server/
 
 test-ci: test
