@@ -12,7 +12,7 @@ func main() {
 	viper.AddConfigPath(".") // always look for config.{json,yml,toml,hcl} in the current working directory
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
+		panic(fmt.Errorf("fatal error config file: %s", err))
 	}
 	initDatabase()
 

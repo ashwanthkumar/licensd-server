@@ -15,7 +15,7 @@ func initDatabase() {
 	dbDSN := viper.GetString("database.dsn")
 	db, err := sql.Open(dbType, dbDSN)
 	if err != nil {
-		panic(fmt.Errorf("Fatal error db init failed: %s \n", err))
+		panic(fmt.Errorf("fatal error db init failed: %s", err))
 	}
 	database = db
 }
