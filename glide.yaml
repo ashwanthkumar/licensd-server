@@ -7,3 +7,7 @@ import:
 - package: github.com/elgris/sqrl
 - package: github.com/go-sql-driver/mysql
 - package: github.com/spf13/viper
+- package: github.com/stretchr/testify
+  version: v1.1.4
+  subpackages:
+  - assert

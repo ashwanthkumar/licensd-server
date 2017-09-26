@@ -1,5 +1,5 @@
-hash: 2c0a62f5e939d95f6c99ae231d40252116330faa3d9ce811311bf2d2e64079df
-updated: 2017-09-14T19:35:11.576501494+05:30
+hash: 8396cc5364bad83fb94053110fe8bd44a6d96e67cd0385dd41352f37c78ae324
+updated: 2017-09-26T22:26:34.002880899+05:30
 imports:
 - name: github.com/elgris/sqrl
   version: a001f88a79e6210d38c802166e7797479d054b68
@@ -56,6 +56,10 @@ imports:
   version: 7aff26db30c1be810f9de5038ec5ef96ac41fd7c
 - name: github.com/spf13/viper
   version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
 - name: github.com/ugorji/go
   version: 8c0409fcbb70099c748d71f714529204975f6c3f
   subpackages:
