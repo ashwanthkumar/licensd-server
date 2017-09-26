@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ashwanthkumar/licensd-server.svg?branch=master)](https://travis-ci.org/ashwanthkumar/licensd-server)
 # licensd.in
 
 ### Notes
