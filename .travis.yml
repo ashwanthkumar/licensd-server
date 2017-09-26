@@ -8,6 +8,10 @@ addons:
     packages:
     - glide
 
+cache:
+  directories:
+    - vendor/
+
 install:
   - make setup
 
