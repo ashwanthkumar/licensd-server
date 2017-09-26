@@ -8,3 +8,9 @@ addons:
     packages:
     - glide
 
+install:
+  - make setup
+
+script:
+  - make test-ci
+  - make build-all
