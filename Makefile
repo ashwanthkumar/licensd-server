@@ -1,7 +1,7 @@
 APPNAME = licensd-server
 VERSION=0.0.1-dev
 TESTFLAGS=-v -cover -covermode=atomic -bench=.
-TEST_COVERAGE_THRESHOLD=56.0
+TEST_COVERAGE_THRESHOLD=30.0
 
 build:
 	go build -tags netgo -ldflags "-w" -o ${APPNAME} .
