@@ -1,10 +1,12 @@
 package handler
 
 import (
+	"bufio"
 	"fmt"
 	"log"
 	"net/http"
 
+	"github.com/ashwanthkumar/licensd-server/parser"
 	"github.com/gin-gonic/gin"
 )
 
@@ -33,6 +35,13 @@ func AddPayloadToDB(c *gin.Context) {
 	}
 	log.Println("BuildMatrix=" + buildMatrix)
 
+	fileFormat, exists := c.GetPostForm("file_format")
+	if !exists {
+		fileFormat = parser.LICENSE_FINDER
+		return
+	}
+	log.Println("FileFormat=" + fileFormat)
+
 	// single file
 	file, err := c.FormFile("file")
 	if err != nil {
@@ -43,13 +52,27 @@ func AddPayloadToDB(c *gin.Context) {
 		return
 	}
 	log.Println(file.Filename)
-
-	// Upload the file to specific dst.
-	c.SaveUploadedFile(file, "/tmp/file")
-
+	f, err := file.Open()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"status": "FAILED",
+			"msg":    fmt.Sprintf("%s", err),
+		})
+		return
+	}
+	scanner := bufio.NewScanner(f)
+	dependencies, err := parser.Parse(scanner, fileFormat)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"status": "FAILED",
+			"msg":    fmt.Sprintf("%s", err),
+		})
+		return
+	}
 	c.JSON(http.StatusOK, gin.H{
-		"status":   "OK",
-		"apiToken": apiToken,
+		"status":       "OK",
+		"apiToken":     apiToken,
+		"dependencies": dependencies,
 	})
 }
 
