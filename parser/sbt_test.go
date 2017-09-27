@@ -20,3 +20,19 @@ func TestParseLineForAnEntryInSbtLicenseReportFile(t *testing.T) {
 	assert.NoError(t, err)
 	assert.EqualValues(t, expectedDep.Licenses, dep.Licenses)
 }
+func TestParseLineForAnEntryInSbtLicenseReportFileWithNoLicenseUrl(t *testing.T) {
+	line := `Apache,Apache License 2.0,de.l3s.boilerpipe # boilerpipe # 1.1.0,`
+	sbt := SBTLicenseReport{}
+	expectedLicense := &License{
+		Name: "Apache License 2.0",
+	}
+	expectedDep := &Dependency{
+		Name:     "de.l3s.boilerpipe:boilerpipe",
+		Version:  "1.1.0",
+		Licenses: []*License{expectedLicense},
+	}
+	dep, err := sbt.parseLine(line)
+
+	assert.NoError(t, err)
+	assert.EqualValues(t, expectedDep.Licenses, dep.Licenses)
+}
