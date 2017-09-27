@@ -12,6 +12,7 @@ curl -X POST http://localhost:8080/payload \
   -F "package_manager=maven"  \
   -F "version=${GO_PIPELINE_NUMBER}" \
   -F "matrix=all" \
+  -F "file_format=sbt" \
   -H "Content-Type: multipart/form-data"
 ```
 
