@@ -1,10 +1,17 @@
 [![Build Status](https://travis-ci.org/ashwanthkumar/licensd-server.svg?branch=master)](https://travis-ci.org/ashwanthkumar/licensd-server)
 # licensd.in
+LicensenD stores all the licenses of your dependencies used within the project and helps you make actionable insights on them.
+
+## Formats Supported
+- [LicenseFinder](https://github.com/pivotal/LicenseFinder)
+- [sbt-license-report](https://github.com/sbt/sbt-license-report)
 
 ### Notes
 Create a copy of `config.sample.yml` in the current working directory as `config.yml` with the right values specified.
 
-#### Sending a license_finder CSV report from CI
+#### Sending a CSV report from CI
+For `license_finder` report use `file_format=license_finder` and for `sbt-license-report` use `file_format=sbt`.
+
 ```
 curl -X POST http://localhost:8080/payload \
   -H "X-Licensd-API-Token: abcdef12345" \
