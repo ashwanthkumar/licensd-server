@@ -42,6 +42,13 @@ func AddPayloadToDB(c *gin.Context) {
 	}
 	log.Println("FileFormat=" + fileFormat)
 
+	buildURL, exists := c.GetPostForm("build_url")
+	if !exists {
+		validateParam("build_url")
+		return
+	}
+	log.Println("BuildUrl=" + buildURL)
+
 	// single file
 	file, err := c.FormFile("file")
 	if err != nil {
