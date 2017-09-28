@@ -5,6 +5,10 @@ import (
 	"fmt"
 )
 
+const SBT = "sbt"
+
+const LICENSE_FINDER = "license_finder"
+
 type License struct {
 	Name string `json:"name"`
 	URL  string `json:"url,omitempty"`
@@ -24,10 +28,6 @@ type Parser interface {
 	// and convert that to an []Dependency objects.
 	Parse(*bufio.Scanner) ([]*Dependency, error)
 }
-
-const SBT = "sbt"
-
-const LICENSE_FINDER = "license_finder"
 
 // Parse the file using a fileFormat type of Parser and return the list of
 // dependencies as described in the file
