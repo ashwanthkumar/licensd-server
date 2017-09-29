@@ -10,17 +10,17 @@ LicensenD stores all the licenses of your dependencies used within the project a
 Create a copy of `config.sample.yml` in the current working directory as `config.yml` with the right values specified.
 
 #### Sending a CSV report from CI
-For `license_finder` report use `file_format=license_finder` and for `sbt-license-report` use `file_format=sbt`.
+For `license_finder` report use `file-format=license_finder` and for `sbt-license-report` use `file-format=sbt`.
 
 ```
 curl -X POST http://localhost:8080/payload \
   -H "X-Licensd-API-Token: abcdef12345" \
-  -F "file=@license.csv" \
-  -F "package_manager=maven"  \
-  -F "version=${GO_PIPELINE_NUMBER}" \
-  -F "version=${GO_SERVER_URL}/pipelines/${GO_PIPELINE_NAME}/${GO_PIPELINE_COUNTER}/${GO_STAGE_NAME}/${GO_STAGE_COUNTER}" \
+  -F "license-file=@license.csv" \
+  -F "project-type=maven"  \
+  -F "build-version=${GO_PIPELINE_NUMBER}" \
+  -F "build-url=${GO_SERVER_URL}/pipelines/${GO_PIPELINE_NAME}/${GO_PIPELINE_COUNTER}/${GO_STAGE_NAME}/${GO_STAGE_COUNTER}" \
   -F "matrix=all" \
-  -F "file_format=sbt" \
+  -F "file-format=sbt" \
   -H "Content-Type: multipart/form-data"
 ```
 

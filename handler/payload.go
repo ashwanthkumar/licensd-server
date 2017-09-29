@@ -16,15 +16,15 @@ func AddPayloadToDB(c *gin.Context) {
 	apiToken := c.GetHeader("X-Licensd-API-Token")
 	validateParam := missingParamInPayload(c)
 
-	packageManager, exists := c.GetPostForm("package_manager")
+	packageManager, exists := c.GetPostForm("project-type")
 	if !exists {
-		validateParam("package_manager")
+		validateParam("project-type")
 		return
 	}
 	log.Println("PackageManager=" + packageManager)
-	buildVersion, exists := c.GetPostForm("version")
+	buildVersion, exists := c.GetPostForm("build-version")
 	if !exists {
-		validateParam("version")
+		validateParam("build-version")
 		return
 	}
 	log.Println("BuildVersion=" + buildVersion)
@@ -35,22 +35,22 @@ func AddPayloadToDB(c *gin.Context) {
 	}
 	log.Println("BuildMatrix=" + buildMatrix)
 
-	fileFormat, exists := c.GetPostForm("file_format")
+	fileFormat, exists := c.GetPostForm("file-format")
 	if !exists {
 		fileFormat = parser.LICENSE_FINDER
 		return
 	}
 	log.Println("FileFormat=" + fileFormat)
 
-	buildURL, exists := c.GetPostForm("build_url")
+	buildURL, exists := c.GetPostForm("build-url")
 	if !exists {
-		validateParam("build_url")
+		validateParam("build-url")
 		return
 	}
 	log.Println("BuildUrl=" + buildURL)
 
 	// single file
-	file, err := c.FormFile("file")
+	file, err := c.FormFile("license-file")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"status": "FAILED",
